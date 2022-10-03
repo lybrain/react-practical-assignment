@@ -19,6 +19,8 @@
     "url": "https://github.com/serjio1905/interview_task/issues"
   },
   "homepage": "https://github.com/serjio1905/interview_task#readme",
-  "dependencies": {
+  "devDependencies": {
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.8.4"
   }
 }

@@ -1,0 +1,17 @@
+html,
+body,
+.main {
+  height: 100%;
+}
+#root {
+  height: inherit;
+}
+.centered-container {
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  display: flex;
+}
+.header__login-name {
+  margin-right: 20px;
+}
