@@ -1,0 +1,41 @@
+.edit-menu {
+  margin-left: auto;
+  margin-top: 30px;
+  margin-right: 30px;
+}
+.delete-modal-body {
+  display: flex;
+  justify-content: center;
+}
+.delete-modal-body > button:first-child {
+  margin-right: 50px;
+}
+.delete-modal-body a {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  background: inherit;
+}
+.article-picture {
+  height: 70%;
+  width: 70%;
+}
+.side-paddings .form-group {
+  margin-top: 30px;
+}
+
+.img-large {
+  height: 500px;
+}
+
+.side-paddings {
+  padding: 0px 50px;
+}
+.post__eval-container {
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+}
+.post__eval-container > button:first-child {
+  margin-right: 30px;
+}

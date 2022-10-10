@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import { createPost } from "../../../store/post/actions";
 import { ApplicationState } from "../../../store/root";
 import routes from "../../../constants/routes.json";
+import useInitState from "../../../hooks/useInitState";
 
 interface PropsFromState {
   success?: boolean;
@@ -14,6 +15,7 @@ interface PropsFromDispatch {
 }
 
 const PostCreate = (props: PropsFromState & PropsFromDispatch) => {
+  useInitState();
   const { create, success, username } = props;
   const navigate = useNavigate();
   const [title, setTitle] = useState("");

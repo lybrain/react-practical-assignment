@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import Loader from "../../../components/loader/loader";
 import Post from "../../../core/models/post";
+import useInitState from "../../../hooks/useInitState";
 import { getPostList } from "../../../store/post/actions";
 import { ApplicationState } from "../../../store/root";
+import routes from "../../../constants/routes.json";
 import "./post-list.css";
 
 interface PropsFromState {
@@ -14,6 +18,8 @@ interface PropsFromDispatch {
   getList: typeof getPostList.request;
 }
 const PostList = (props: PropsFromState & PropsFromDispatch) => {
+  const navigate = useNavigate();
+  useInitState();
   const { success, list, getList, loading } = props;
   const [page, setPage] = useState(1);
 
@@ -21,14 +27,14 @@ const PostList = (props: PropsFromState & PropsFromDispatch) => {
     getList({ page: page });
   }, []);
 
+  const onPostClick = (id: number) => {
+    navigate(`${routes.VIEW}/${id}`);
+  };
+
   return (
     <>
       {loading ? (
-        <div className="centered-container h-100">
-          <div className="spinner-border " role="status">
-            <span className="sr-only"></span>
-          </div>
-        </div>
+        <Loader />
       ) : (
         <div className="album py-5">
           <div className="container">
@@ -36,7 +42,11 @@ const PostList = (props: PropsFromState & PropsFromDispatch) => {
               {success &&
                 list.map(({ id, username, title, imageSrc }) => {
                   return (
-                    <div className="col-md-4" key={id}>
+                    <div
+                      className="col-md-4"
+                      key={id}
+                      onClick={() => id && onPostClick(id)}
+                    >
                       <div className="card mb-4 box-shadow">
                         <img
                           className="card-img-top post-list__img"

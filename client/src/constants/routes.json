@@ -1,5 +1,6 @@
 {
   "LOGIN": "/login",
   "MAIN": "/list",
-  "CREATE": "/create"
+  "CREATE": "/create",
+  "VIEW": "/view"
 }

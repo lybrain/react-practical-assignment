@@ -31,7 +31,6 @@ export default function AppRoutes(props: { isAuthenticated: boolean }) {
               </ProtectedRoute>
             }
           ></Route>
-
           <Route element={<NotFound />} />
         </Switch>
       </ErrorBoundry>
